@@ -3,6 +3,39 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
 
+  if (process.browser) {
+  
+    Morris.Area({
+      element: 'graph',
+      behaveLikeLine: true,
+      lineColors: ['#e36217', '#2154cf', '#4da74d', '#afd8f8', '#edc240', '#cb4b4b', '#9440ed'],
+      data: [{
+            x: '2012',
+            y: 9,
+            z: 7
+         },
+         {
+            x: '2013',
+            y: 6,
+            z: 8
+         },
+         {
+            x: '2014',
+            y: 6,
+            z: 5
+         },
+         {
+            x: '2015',
+            y: 8,
+            z: 10
+         }
+      ],
+      xkey: 'x',
+      ykeys: ['y', 'z'],
+      labels: ['Y', 'Z']
+   });
+
+  }
   
   return (
     <>
@@ -24,7 +57,7 @@ export default function Home() {
         <script type="text/javascript" src="js/smoothscroll.js"></script>
         <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyCsa2Mi2HqyEcEnM1urFSIGEpvualYjwwM"></script>
         <script type="text/javascript" src="js/gmap3.js"></script>
-        {/* <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script> */}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
         <script type="text/javascript" src="js/morris.js"></script>
         <script type="text/javascript" src="js/custom.js"></script>
 
